@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<menu-config xmlns="http://schemas.haulmont.com/cuba/menu.xsd">
+    <menu id="application-sales1"
+          insertBefore="administration">
+        <item screen="sales1$Customer.browse"/>
+    </menu>
+</menu-config>
