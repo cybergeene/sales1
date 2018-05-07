@@ -1,0 +1,2 @@
+alter table SALES1_ORDER add constraint FK_SALES1_ORDER_CUSTOMER foreign key (CUSTOMER_ID) references SALES1_CUSTOMER(ID);
+create index IDX_SALES1_ORDER_CUSTOMER on SALES1_ORDER (CUSTOMER_ID);
