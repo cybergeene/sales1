@@ -9,6 +9,14 @@
         <datasource id="customerDs"
                     class="com.company.sales1.entity.Customer"
                     view="_local"/>
+        <collectionDatasource id="ordersDs"
+                              class="com.company.sales1.entity.Order">
+            <query>
+                <![CDATA[select e from sales1$Order e
+where e.customer.id = :ds$customerDs
+order by e.date]]>
+            </query>
+        </collectionDatasource>
     </dsContext>
     <dialogMode height="600"
                 width="800"/>
@@ -22,6 +30,16 @@
                 <field property="email"/>
             </column>
         </fieldGroup>
+        <label value="msg://editorCaption.label"/>
+        <table id="ordersTable"
+               height="100px"
+               width="350px">
+            <columns>
+                <column id="date"/>
+                <column id="amount"/>
+            </columns>
+            <rows datasource="ordersDs"/>
+        </table>
         <frame id="windowActions"
                screen="editWindowActions"/>
     </layout>
